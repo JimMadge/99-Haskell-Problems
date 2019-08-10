@@ -1,3 +1,5 @@
+-- Find the last element of a list
+
 mylast [] = error "Empty list"
 mylast (x:xs)
     | xs == [] = x
