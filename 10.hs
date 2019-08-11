@@ -13,5 +13,9 @@ runLength (x:xs) = (length x, head x) : runLength xs
 
 encode list = runLength $ pack list
 
+-- Consise lambda and list comphension solutions from the wiki
+-- encode xs = map (\x -> (length x,head x)) (group xs)
+-- encode xs = [(length (x:xs), x) | (x:xs) <- pack xs]
+
 main = do
     print $ encode "aaaabccaadeeee"
