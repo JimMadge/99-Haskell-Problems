@@ -1,8 +1,8 @@
--- Reverse a list
+-- Find the number of elements in a list
 
-myReverse [] = []
-myReverse (x:xs) = myReverse xs ++ [x]
+myLength [] = 0
+myLength (x:xs) = 1 + myLength xs
 
 main = do
-    print $ myReverse "A man, a plan, a canal, panama!"
-    print $ myReverse [1,2,3,4]
+    print $ myLength [123, 456, 789]
+    print $ myLength "Hello, world!"

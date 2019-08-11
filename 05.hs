@@ -1,8 +1,8 @@
--- Find out whether a list is a palindrome.
+-- Reverse a list
 
-isPalindrome x = x == reverse x
+myReverse [] = []
+myReverse (x:xs) = myReverse xs ++ [x]
 
 main = do
-    print $ isPalindrome [1,2,3]
-    print $ isPalindrome "madamimadam"
-    print $ isPalindrome [1,2,4,8,16,8,4,2,1]
+    print $ myReverse "A man, a plan, a canal, panama!"
+    print $ myReverse [1,2,3,4]
