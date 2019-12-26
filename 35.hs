@@ -17,7 +17,7 @@ smallestPrimeFactor :: Int -> Int
 smallestPrimeFactor n
     | isPrime n = n
     | otherwise = head [x | x <- primes, mod n x == 0]
-        where primes = [x | x <- [2..(floor . sqrt $ fromIntegral n)], isPrime x]
+        where primes = [x | x <- (2:3:[x + i | x <- [6,12..], i <- [-1,1]]), isPrime x]
 
 primeFactors :: Int -> [Int]
 primeFactors 1 = []
