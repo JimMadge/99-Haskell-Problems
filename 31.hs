@@ -2,7 +2,7 @@
 
 isPrime :: Int -> Bool
 isPrime n
-    | n == 1 = True
+    | n == 1 = False
     | n == 2 = True
     | n == 3 = True
     | mod n 2 == 0 = False
