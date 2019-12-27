@@ -19,3 +19,6 @@ goldbach n = goldbach' n primes
 goldbach' n (x:xs)
     | isPrime (n-x) = (x,n-x)
     | otherwise = goldbach' n xs
+
+main = do
+    print $ goldbach 28
