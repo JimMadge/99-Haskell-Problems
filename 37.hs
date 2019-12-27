@@ -28,12 +28,17 @@ collect xs = collect' 1 xs where
 
 primeFactorsMult = collect . primeFactors
 
-phi' [] = 1
-phi' (x:xs) = ((p-1) * p^(m-1)) * phi' xs
-    where p = fst x
-          m = snd x
+-- First implementatation
+-- phi' [] = 1
+-- phi' (x:xs) = ((p-1) * p^(m-1)) * phi' xs
+--     where p = fst x
+--           m = snd x
+--
+-- phi = phi' . primeFactorsMult
 
-phi = phi' . primeFactorsMult
+-- A more 'Haskell' like solution with function composition
+f (p,m) = (p-1) * p^(m-1)
+phi = product . map f . primeFactorsMult
 
 main = do
     print $ phi 315
